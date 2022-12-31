@@ -1,7 +1,7 @@
 # MERN-Stack-Travel-App
 Full Resonsive full stack (MERN) App whith :
-. Authntiactions
-- Authorizations
+. Authentication
+- Authorization
 - CRUD
 - Related Posts Functionality 
 - Like Dislike Post Functionality
