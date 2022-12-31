@@ -2,7 +2,7 @@
 Full Resonsive full stack (MERN) App whith :
 . Authentication
 - Authorization
-- CRUD
+- CRUD fonctionalities
 - Related Posts Functionality 
 - Like Dislike Post Functionality
 # Tools are used :
