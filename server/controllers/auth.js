@@ -11,7 +11,7 @@ const SignUp = async (req,res) => {
         const isExistUserName = await User.findOne({userName:userName})
         const isExistUserEmail = await User.findOne({email:email})
         if(isExistUserName){
-            return res.json({message:"This userName already Exist !!"})
+            return res.status(400).json({message:"This userName already Exist !!"})
         }
         if(isExistUserEmail){
             return res.json({message:"This email already Exist !!"})
@@ -24,7 +24,7 @@ const SignUp = async (req,res) => {
             userName, email, password:hashPassword
         })
         await newUser.save()
-        const token = jwt.sign({id:newUser._id, userName:newUser.userName},'JWT_SECRET',{expiresIn:'3d'})
+        const token = jwt.sign({id:newUser._id, userName:newUser.userName},process.env.JWT_SECRET,{expiresIn:'1h'})
         res.status(201).json({user:newUser,token})
     } catch (error) {
         console.log(error)
@@ -39,13 +39,13 @@ const SignIn = async (req,res) => {
         }
         const isExistUser = await User.findOne({email:email})
         if(!isExistUser){
-            return res.status(404).json({message:"This User does not exist !!"})
+            return res.status(404).json({ message:"This User does not exist !!"})
         }
         const isValidPassword = await bcrypt.compare(password,isExistUser.password)
         if(!isValidPassword){
-            return res.json({message:"The Password is incorrect !!"})
+            return res.status(400).json({message:"The Password is incorrect !!"})
         }
-        const token = jwt.sign({id:isExistUser._id, userName:isExistUser.userName},'JWT_SECRET',{expiresIn:'3d'})
+        const token = jwt.sign({id:isExistUser._id, userName:isExistUser.userName},process.env.JWT_SECRET,{expiresIn:'1h'})
         res.status(201).json({user:isExistUser,token})
     } catch (error) {
         console.log(error)

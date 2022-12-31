@@ -5,6 +5,7 @@ const postSchema = mongoose.Schema({
         type:String,
         default:''
     },
+    creator:String,
     desc:{
         type:String,
         default:''
@@ -20,6 +21,10 @@ const postSchema = mongoose.Schema({
     likes:{
         type:Array,
         default:[]
+    },
+    comments:{
+        type:Array,
+        default : []
     }
     
 },{timestamps:true})

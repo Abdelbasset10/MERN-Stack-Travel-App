@@ -6,7 +6,7 @@ const auth = async (req,res,next) => {
         if(!token) {
             console.log('No Token !')
         }else{
-            const payload = jwt.verify(token,'JWT_SECRET')
+            const payload = jwt.verify(token,process.env.JWT_SECRET)
             req.user = payload 
             next()
         }

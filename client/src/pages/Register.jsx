@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useNavigate} from 'react-router-dom'
 import {FaUserCircle} from 'react-icons/fa'
-import { login, register} from '../redux/features/authSlice'
+import { login} from '../redux/features/authSlice'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -31,7 +31,6 @@ const Auth = () => {
       if(userData.password !== userData.confirmPassword){
         return setErr('Password and Confirm password are not the same !')
       }
-      dispatch(register({userData,navigate,toast}))
     }else{
       if(userData.email === '' || userData.password === ''){
         return setErr('You have to fill all your informations !')
