@@ -19,6 +19,6 @@ Full Resonsive full stack (MERN) App whith :
 - Second Terminal : Type commande : "cd server" then "npm install" then "npm start"
 Important Note : 
 Accodring to that the server application is not pushed on online server so you have to do extra steps before using the app :
-  - You have to create a Data Base in Mongo DB an connect it to the application in .env file with cariable "MONGO_URL"
+  - You have to create a Data Base in Mongo DB and connect it to the application in .env file  in viariable : "MONGO_URL"
   - create variable JWT_SECRET in .env file and type what ever you want
 
