@@ -31,7 +31,6 @@ export const getUserPosts = createAsyncThunk("/posts/getUserPosts", async (userN
 export const addPost = createAsyncThunk("/posts/create", async ({postData,toast},{rejectWithValue}) => {
     try {
         const {data} = await api.createPost(postData)
-        console.log(data)
         toast.success("Post created succefully !!")
         return data
     } catch (err) {

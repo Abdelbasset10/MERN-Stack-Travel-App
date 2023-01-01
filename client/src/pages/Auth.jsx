@@ -4,13 +4,13 @@ import {useNavigate} from 'react-router-dom'
 import {FaUserCircle} from 'react-icons/fa'
 import { login, register} from '../redux/features/authSlice'
 
-import { ToastContainer, toast } from 'react-toastify';
+import {toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Auth = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const { loading, error } = useSelector((state) => ({ ...state.auth }));
+  const {error} = useSelector((state) => ({ ...state.auth }));
 
   const [isSignUp,setIsSignUp] = useState(true)
   const [err,setErr] = useState('')

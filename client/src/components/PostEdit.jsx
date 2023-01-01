@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import {AiFillDelete} from 'react-icons/ai'
 import {FaEdit} from 'react-icons/fa'
 import {isUpdatePost } from '../redux/features/modalSlice';

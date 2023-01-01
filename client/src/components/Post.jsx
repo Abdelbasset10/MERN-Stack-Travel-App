@@ -3,11 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import {useDispatch, useSelector} from 'react-redux'
 import {AiFillLike} from 'react-icons/ai'
 import { useState } from 'react'
-import { likeDislike } from '../redux/features/postSlice'
 import { likeDislikePost } from '../redux/api'
 
 const Post = ({post}) => {
-    const dispatch = useDispatch()
+    console.log(post)
     const navigate = useNavigate()
     const {user} = useSelector((state)=>state.auth)
     const userId = user?.user?._id

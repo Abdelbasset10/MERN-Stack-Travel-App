@@ -3,10 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {FaArrowLeft} from 'react-icons/fa'
 import {TbCalendarTime} from 'react-icons/tb'
-import user from '../assets/user.png'
-import { comment, getPost, getSimilairPosts } from '../redux/features/postSlice'
+import {getPost, getSimilairPosts } from '../redux/features/postSlice'
 import Comment from '../components/Comment'
-import { commentPost, similairPosts } from '../redux/api'
+import { commentPost} from '../redux/api'
 import Post from '../components/Post'
 
 const PostDetail = () => {

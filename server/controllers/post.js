@@ -32,6 +32,7 @@ const getUserPosts = async (req,res) => {
     }
 }
 
+
 const createPost = async (req,res) => {
     try {
         const newPost = new Post({
